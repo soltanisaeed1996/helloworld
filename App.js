@@ -6,18 +6,38 @@
  * @flow strict-local
  */
 import React, {useState} from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {Text, TextInput, View, Button} from 'react-native';
 
-const pizzaholder = () => {
-  const [name, setText] = useState('');
+const pizzaholder = (props) => {
+  const [akbar, setName] = useState('');
+  const [asghar, setFamily] = useState('');
+
   return (
     <View style={{padding: 10}}>
       <TextInput
         style={{height: 40}}
         placeholder="please type your name"
-        onChangeText={(name) => setText(name)}
+        //defaultValue={props.name}
+        value={akbar}
+        onChangeText={(x) => setName(x)}
       />
-      <Text>hello {name}</Text>
+      <TextInput
+        style={{height: 40}}
+        placeholder="please type your name"
+        //defaultValue={props.family}
+        value={asghar}
+        onChangeText={(x) => setFamily(x)}
+      />
+      <Text>
+        hello {akbar} {asghar}
+      </Text>
+      <Button
+        onPress={() => {
+          setFamily('');
+          setName('');
+        }}
+        title="reset"
+      />
     </View>
   );
 };
