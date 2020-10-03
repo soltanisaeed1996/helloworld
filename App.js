@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
 
 const pizzaholder = () => {
-  const [name, family, setText] = useState('');
+  const [name, setText] = useState('');
   return (
     <View style={{padding: 10}}>
       <TextInput
